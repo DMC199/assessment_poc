@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4aa83cc739463234e8680acd6287e59c
-timeCreated: 1457644117
+guid: 749c3d1457047ce4ba8a61eaa401d205
+timeCreated: 1458003995
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -29,8 +29,8 @@ ModelImporter:
     3300008: Sun
     4300000: Sun
     4300002: PlanetC
-    4300004: PlanetA
-    4300006: PlanetB
+    4300004: PlanetB
+    4300006: PlanetA
     4300008: Ring
     7400000: Scene
     9500000: //RootNode
@@ -54,47 +54,7 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations:
-    - serializedVersion: 16
-      name: Scene
-      takeName: Scene
-      firstFrame: 1
-      lastFrame: 96
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask:
-      - path: 
-        weight: 1
-      - path: PlanetA
-        weight: 1
-      - path: PlanetB
-        weight: 1
-      - path: PlanetC
-        weight: 1
-      - path: Ring
-        weight: 1
-      - path: Sun
-        weight: 1
-      maskType: 0
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 1
+    clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
