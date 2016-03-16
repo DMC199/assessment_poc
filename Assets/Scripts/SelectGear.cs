@@ -28,14 +28,24 @@ public class SelectGear : MonoBehaviour {
 	public Text RingStateText;
 	public Text SunStateText;
 	public Text PromptText;
+	public Text WinText;
+	public GameObject checkObj;
+	public GameObject failObj;
+	public Animator checkAnimation;
+	public Animator failAnimation;
+	public AudioSource audioSource;
 
 	// Use this for initialization
 	void Start () {
+		gameObject.SetActive (true);
+		checkObj.gameObject.SetActive (false); //Hide the check box
+		failObj.gameObject.SetActive (false); //Hide the fail fail animation
 		_ringSpeed = gearSpeed.Stationary;
 		_sunSpeed = gearSpeed.Reverse;
 		_currentPrompt = RandomEnumValue<prompt>();
 		RingStateText.text = "";
 		SunStateText.text = "";
+		WinText.text = "";
 		PromptText.text = "Put the gears in: " + _currentPrompt.ToString ();
 	}
 		
@@ -106,6 +116,10 @@ public class SelectGear : MonoBehaviour {
 				break;	
 			} else {
 				// TODO: insert fail animations
+				gameObject.SetActive (false);
+				failObj.gameObject.SetActive (true);
+				WinText.text = "Fail!";
+				failAnimation.Play("Fail");
 				break;
 			}
 		case prompt.LowDrive:
@@ -114,6 +128,10 @@ public class SelectGear : MonoBehaviour {
 				break;	
 			} else {
 				// TODO: insert fail animations
+				gameObject.SetActive (false);
+				failObj.gameObject.SetActive (true);
+				WinText.text = "Fail!";
+				failAnimation.Play("Fail");
 				break;
 			}
 		case prompt.Overdrive:
@@ -122,6 +140,10 @@ public class SelectGear : MonoBehaviour {
 				break;	
 			} else {
 				// TODO: insert fail animations
+				gameObject.SetActive (false);
+				failObj.gameObject.SetActive (true);
+				WinText.text = "Fail!";
+				failAnimation.Play("Fail");
 				break;
 			}
 		case prompt.Reverse:
@@ -130,6 +152,10 @@ public class SelectGear : MonoBehaviour {
 				break;	
 			} else {
 				// TODO: insert fail animations
+				gameObject.SetActive (false);
+				failObj.gameObject.SetActive (true);
+				WinText.text = "Fail!";
+				failAnimation.Play("Fail");
 				break;
 			}
 		}
@@ -138,6 +164,10 @@ public class SelectGear : MonoBehaviour {
 	void Win(string condition)
 	{
 		PlayAnimation (condition); // play the win animation
+		WinText.text = "Correct!";
+		audioSource.Play ();
+		checkObj.gameObject.SetActive (true); //Enable the check box
+		checkAnimation.Play("Check");
 		//yield return new WaitForSeconds (2);
 		//StopAnimation (condition);
 		//Start ();
